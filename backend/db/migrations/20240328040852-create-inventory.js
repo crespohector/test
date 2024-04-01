@@ -25,7 +25,11 @@ module.exports = {
       },
       statId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Stats',
+          key: 'id'
+        },
       },
       itemName: {
         type: Sequelize.STRING(50),

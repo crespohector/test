@@ -17,7 +17,11 @@ module.exports = (sequelize, DataTypes) => {
   Inventory.init({
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'Users',
+        key: 'id'
+      },
     },
     itemName: {
       type: DataTypes.STRING,
